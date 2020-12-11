@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class MainProgram {
@@ -25,13 +26,13 @@ public class MainProgram {
     public void runModule(int studentID) {
         if (studentID == 11530)
             System.out.println("No. It is the professor ID.\n");
-        
+       
         else if (studentID == 1813545) {
         	printInitialScreen_1813545();
         }
         
         else if(studentID==1812284){
-		calculate_1812284();
+        	calculate_1812284();
         }
         else if(studentID==1812967) {
         	InitialScreen_1812967();
@@ -39,8 +40,11 @@ public class MainProgram {
 	else if(studentID == 1813592) {
         	print_1813592_screen();
         }
+        else if(studentID == 1812084) {
+        	printMainScreen_1812084();
+        }
     }
-
+    
     private void calculate_1812284() {
         boolean loop=true;
         int select;
@@ -276,4 +280,61 @@ public class MainProgram {
     		return -number;
     	}
     }
+
+    
+    
+    public void printMainScreen_1812084() {
+    	Scanner scan = new Scanner(System.in);
+    	System.out.println("[StudentID: 1812084]");
+        System.out.println("1. Calculate factorial");  
+        System.out.println("2.Calculate minimum value of numbers");
+        System.out.print("Enter menu number: ");
+        int menuNumber=scan.nextInt();
+        if(menuNumber==1) {
+        	System.out.print("Enter the positive number: ");
+        	long getNumber=scan.nextLong();
+        	CalcFactorial(getNumber);
+        	if(getNumber<0) {
+        		System.out.println("Error!Enter the positive number");       		}
+        	else {
+            	System.out.println("The value is "+CalcFactorial(getNumber));	
+        	}
+       	}
+       	else if(menuNumber==2) {
+       		System.out.print("Enter two integers: ");
+       		int getNumber1 = scan.nextInt();
+       		int getNumber2 = scan.nextInt();
+        	CalcMinValue(getNumber1,getNumber2);
+        	System.out.println("The value is "+CalcMinValue(getNumber1,getNumber2));   	
+        }
+        else {
+        	System.out.println("Error!Enter the number 1 or 2");
+        	System.out.println("");
+        }
+	}
+	
+	public long CalcFactorial(long getNumber) {
+		if(getNumber>0) {
+			return getNumber*CalcFactorial(getNumber-1);
+		}
+		else if(getNumber==0||getNumber==1) {
+			getNumber=1;
+			return getNumber;
+		}
+		else  {
+			return -1;
+		}
+	}
+	
+	public int CalcMinValue(int getNumber1,int getNumber2) {
+		if(getNumber1>getNumber2) {
+			return getNumber2;
+		}
+		else if(getNumber1==getNumber2) {
+			return getNumber1;
+		}
+		else{
+			return getNumber1;
+		}
+	}
 }
