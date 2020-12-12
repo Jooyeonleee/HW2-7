@@ -286,7 +286,7 @@ public class MainProgram {
 
     
     
-        public void printMainScreen_1812084() {
+    public void printMainScreen_1812084() {
     	Scanner scan = new Scanner(System.in);
     	System.out.println("[StudentID: 1812084]");
     	System.out.println("1. Calculate factorial");  
