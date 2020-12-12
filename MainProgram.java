@@ -37,11 +37,14 @@ public class MainProgram {
         else if(studentID==1812967) {
         	InitialScreen_1812967();
         }
-	else if(studentID == 1813592) {
+        else if(studentID == 1813592) {
         	print_1813592_screen();
         }
         else if(studentID == 1812084) {
         	printMainScreen_1812084();
+        }
+        else if(studentID == 1812597) {
+        	printScreen_1812597();
         }
     }
     
@@ -336,5 +339,47 @@ public class MainProgram {
 		else{
 			return getNumber1;
 		}
+	}
+	
+	public void printScreen_1812597() {
+		Scanner scanner = new Scanner(System.in);
+    	System.out.println("[StudentID: 1812597]");
+        System.out.println("1. Calculate Factorial");  
+        System.out.println("2. Calculate Power");
+        System.out.print("Enter menu(1 or 2) : ");
+        int menu_num = scanner.nextInt();
+        if (menu_num == 1) {
+        	System.out.print("Enter factorial number(1-10) : ");
+        	int factorial_num = scanner.nextInt();
+        	System.out.println(factorial_num+"! = "+factorial_1812597(factorial_num));
+        	System.out.println();
+        }
+        else if(menu_num == 2) {
+        	System.out.print("Enter power number a(double), b(int): ");
+        	double a = scanner.nextDouble();
+        	int b = scanner.nextInt();
+        	double answer = power_1812597(a, b);
+        	System.out.println(a+"^"+b+" = "+String.format("%.2f", answer));
+        	System.out.println();
+        	
+        }
+	}
+	
+	public int factorial_1812597(int a) {
+		if(a > 1) {
+    		return a * factorial_1812597(a-1);
+    	}
+    	else {
+    		return 1;
+    	}
+	}
+	
+	public double power_1812597(double a, int b) {
+		double c = a;
+		for (int i = 0; i < b-1; i++) {
+			c = c*a;
+		}
+		
+		return c;
 	}
 }
