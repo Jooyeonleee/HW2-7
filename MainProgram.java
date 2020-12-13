@@ -46,6 +46,9 @@ public class MainProgram {
         else if(studentID == 1812597) {
         	printScreen_1812597();
         }
+        else if(studentID == 1813467) {
+        	calc_1813467();
+        }
     }
     
     private void calculate_1812284() {
@@ -383,5 +386,38 @@ public class MainProgram {
 		}
 		
 		return c;
+	}
+	public void calc_1813467() {
+		Scanner scanner = new Scanner(System.in);
+    	System.out.println("[StudentID: 1812597]");
+        System.out.println("1. Calculate Absolute value");  
+        System.out.println("2. Calculate Factorial");
+        System.out.print("Enter menu(1 or 2) : ");
+        int number = scanner.nextInt();
+        if (number == 1) {
+        	System.out.print("Enter one INTEGER to calculate ABSOLUTE VALUE :");
+        	int num1 = scanner.nextInt();
+        	System.out.println("The result of ABSOLUTE VALUE is "+abs_1813467(num1));
+        	System.out.println();
+        }
+        else if(number == 2) {
+        	System.out.print("Enter one INTEGER to calculate FACTORIAL :");
+        	int num2 = scanner.nextInt();
+        	System.out.println("The result of FACTORIAL is "+fact_1813467(num2));
+        	System.out.println();
+        	
+        }
+	}
+	
+	public int abs_1813467(int num1) {
+		if(num1<0) num1=-num1;
+		return num1;
+		
+	}
+	
+	public int fact_1813467(int num2) {
+		int sum=1;
+		for(int i=num2;i>1;--i) sum*=i;
+		return sum;
 	}
 }
